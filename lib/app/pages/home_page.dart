@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'components/custom_button.dart';
 import 'components/input_item.dart';
 import 'components/logo.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
@@ -14,26 +17,42 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Logo(),
-          InputItem(text: 'Gasolina', ctrl: _gasController),
-          InputItem(text: 'Alcool', ctrl: _alcController),
           Container(
-            height: 50,
             margin: EdgeInsets.all(30),
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(50),
+              color: Colors.white.withOpacity(0.8),
+              borderRadius: BorderRadius.circular(25),
             ),
-            child: FlatButton(
-              onPressed: () {},
-              child: Text(
-                "Calcular",
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Theme.of(context).primaryColor,
+            child: Column(
+              children: [
+                SizedBox(height: 50),
+                Text(
+                  "Compensa Utilizar alcool",
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 25,
+                  ),
                 ),
-              ),
+                SizedBox(
+                  height: 20,
+                ),
+                CustomButton(
+                  busy: false,
+                  invert: true,
+                  func: () {},
+                  text: 'Calcular Novamente',
+                )
+              ],
             ),
           ),
+          InputItem(text: 'Gasolina', ctrl: _gasController),
+          InputItem(text: 'Alcool', ctrl: _alcController),
+          CustomButton(
+            busy: true,
+            invert: false,
+            func: () {},
+            text: 'Calcular',
+          )
         ],
       ),
     );
