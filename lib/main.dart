@@ -13,6 +13,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         fontFamily: "WorkSans",
         primaryColor: Color(0xFF77D1B3),
+        accentColor: Color(0xFF77D1B3),
         textTheme: TextTheme(
           body1: TextStyle(color: Colors.white),
         ),

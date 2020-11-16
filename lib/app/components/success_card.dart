@@ -12,8 +12,9 @@ class SuccessCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(30),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.8),
-        borderRadius: BorderRadius.circular(25),
+        color: Colors.white.withOpacity(0.85),
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
       ),
       child: Column(
         children: [
@@ -22,11 +23,12 @@ class SuccessCard extends StatelessWidget {
             result,
             style: TextStyle(
               color: Theme.of(context).primaryColor,
-              fontSize: 25,
+              fontSize: 26,
+              fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 15,
           ),
           CustomButton(
             busy: false,

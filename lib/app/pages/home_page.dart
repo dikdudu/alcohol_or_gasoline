@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                   height: 30,
                 ),
                 Text(
-                  'Alcool ou gasolina',
+                  'Álcool ou Gasolina',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
         if (res >= 0.7) {
           _resultText = "Compensa usar Gasolina";
         } else {
-          _resultText = "Compensa usa Alcool";
+          _resultText = "Compensa usar Álcool";
         }
 
         _completed = true;
