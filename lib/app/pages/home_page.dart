@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Color _color = Color(0xFF00252C);
+  Color _color = Color(0xFF77D1B3);
   var _gasController = new MoneyMaskedTextController();
   var _alcController = new MoneyMaskedTextController();
   var _completed = false;
@@ -22,17 +22,33 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-          child: AnimatedContainer(
-            duration: Duration(
-              milliseconds: 1200,
+      body: ListView(
+        children: [
+          Logo(),
+          AnimatedContainer(
+            decoration: BoxDecoration(
+              color: _color,
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(100),
+                  bottomRight: Radius.circular(100)),
             ),
-            color: _color,
-            child: ListView(
+            height: MediaQuery.of(context).size.height * 0.72,
+            duration: Duration(milliseconds: 1200),
+            child: Column(
               children: [
-                Logo(),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'Alcool ou gasolina',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
                 _completed
                     ? SuccessCard(
                         result: _resultText,
@@ -46,8 +62,10 @@ class _HomePageState extends State<HomePage> {
                       ),
               ],
             ),
-          ),
-        ));
+          )
+        ],
+      ),
+    );
   }
 
   Future calculate() {
@@ -86,7 +104,7 @@ class _HomePageState extends State<HomePage> {
 
       _completed = false;
       _busy = false;
-      _color = Color(0xFF00252C);
+      _color = Color(0xFF77D1B3);
     });
   }
 }

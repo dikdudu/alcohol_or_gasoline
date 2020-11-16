@@ -11,9 +11,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFF00252C),
-        accentColor: Color(0xFF84E091),
         fontFamily: "WorkSans",
+        primaryColor: Color(0xFF77D1B3),
         textTheme: TextTheme(
           body1: TextStyle(color: Colors.white),
         ),

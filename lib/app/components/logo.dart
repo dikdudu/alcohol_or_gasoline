@@ -11,12 +11,6 @@ class Logo extends StatelessWidget {
           height: 80,
         ),
         SizedBox(height: 30),
-        Text(
-          'Alcool ou gasolina',
-          style: TextStyle(
-              color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 30),
       ],
     );
   }
