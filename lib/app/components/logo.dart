@@ -7,13 +7,14 @@ class Logo extends StatelessWidget {
       children: [
         SizedBox(height: 80),
         Image.asset(
-          'assets/images/logo2.png',
-          height: 100,
+          'assets/images/logo.png',
+          height: 80,
         ),
         SizedBox(height: 30),
         Text(
           'Alcool ou gasolina',
-          style: TextStyle(color: Colors.white, fontSize: 18),
+          style: TextStyle(
+              color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
         ),
         SizedBox(height: 30),
       ],
