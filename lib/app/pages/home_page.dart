@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
                   topLeft: Radius.circular(100),
                   bottomRight: Radius.circular(100)),
             ),
-            height: MediaQuery.of(context).size.height * 0.72,
+            height: MediaQuery.of(context).size.height * 0.731,
             duration: Duration(milliseconds: 1200),
             child: Column(
               children: [
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                   'Alcool ou gasolina',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
     double res = alc / gas;
 
     setState(() {
-      _color = Colors.blue;
+      _color = Color(0xFF04C384);
       _completed = false;
       _busy = true;
     });

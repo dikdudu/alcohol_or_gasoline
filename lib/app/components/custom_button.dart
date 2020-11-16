@@ -29,14 +29,16 @@ class CustomButton extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               color: invert ? Theme.of(context).primaryColor : Colors.white,
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30)),
             ),
             child: FlatButton(
               onPressed: func,
               child: Text(
                 text,
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 22,
                   color: invert ? Colors.white : Theme.of(context).primaryColor,
                 ),
               ),

@@ -12,11 +12,13 @@ class InputItem extends StatelessWidget {
     return Row(
       children: [
         Container(
+          margin: EdgeInsets.only(left: 30, right: 30),
           width: 100,
           alignment: Alignment.centerRight,
           child: Text(
             text,
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 22),
+            textAlign: TextAlign.left,
           ),
         ),
         SizedBox(width: 20),
