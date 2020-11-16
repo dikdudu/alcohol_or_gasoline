@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Color _color = Color(0xFF00252C);
   var _gasController = new MoneyMaskedTextController();
   var _alcController = new MoneyMaskedTextController();
   var _completed = false;
@@ -21,24 +22,29 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      body: ListView(
-        children: [
-          Logo(),
-          _completed
-              ? SuccessCard(
-                  result: _resultText,
-                  reset: reset,
-                )
-              : SubmitForm(
-                  gasController: _gasController,
-                  alcController: _alcController,
-                  busy: _busy,
-                  submitFunc: calculate,
-                ),
-        ],
-      ),
-    );
+        backgroundColor: Theme.of(context).primaryColor,
+        body: AnimatedContainer(
+          duration: Duration(
+            milliseconds: 1200,
+          ),
+          color: _color,
+          child: ListView(
+            children: [
+              Logo(),
+              _completed
+                  ? SuccessCard(
+                      result: _resultText,
+                      reset: reset,
+                    )
+                  : SubmitForm(
+                      gasController: _gasController,
+                      alcController: _alcController,
+                      busy: _busy,
+                      submitFunc: calculate,
+                    ),
+            ],
+          ),
+        ));
   }
 
   Future calculate() {
@@ -51,6 +57,7 @@ class _HomePageState extends State<HomePage> {
     double res = alc / gas;
 
     setState(() {
+      _color = Colors.blue;
       _completed = false;
       _busy = true;
     });
@@ -76,6 +83,7 @@ class _HomePageState extends State<HomePage> {
 
       _completed = false;
       _busy = false;
+      _color = Color(0xFF00252C);
     });
   }
 }
